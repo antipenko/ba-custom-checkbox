@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ba-forms</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!--<form action="" id="simple-form">-->
+
+            <!--<h1 class="forem__title">Наша форма</h1>-->
+
+            <!--&lt;!&ndash;-->
+                <!--Мы можем просто перечислять элементы формы:-->
+            <!--&ndash;&gt;-->
+
+            <!--<input type="text" name="test" placeholder="Название чего-либо" >-->
+            <!--<input type="email" placeholder="your-email@gm.com" required>-->
+
+            <!--<br>-->
+
+            <!--<textarea name="" id="" cols="60" rows="5" placeholder="Ваш отзыв"></textarea>-->
+
+            <!--<br>-->
+
+            <!--<select name="" id="">-->
+                <!--<option value="">option 1</option>-->
+                <!--<option value="">option 2</option>-->
+                <!--<option value="">option 3</option>-->
+                <!--<option value="">option 4</option>-->
+                <!--<option value="">option 5</option>-->
+            <!--</select>-->
+
+            <!--<label>-->
+                <!--<input type="checkbox">-->
+                <!--Я согласен со всеми условиями-->
+            <!--</label>-->
+
+
+            <!--<h2>Оцените</h2>-->
+
+            <!--<label ><input type="radio"> 1</label>-->
+            <!--<label ><input type="radio"> 2</label>-->
+            <!--<label ><input type="radio"> 3</label>-->
+            <!--<label ><input type="radio"> 4</label>-->
+            <!--<label ><input type="radio"> 5</label>-->
+
+
+
+            <!--<h2>Оцените нормально</h2>-->
+
+            <!--<label ><input type="radio" name="ocenka"> 1</label>-->
+            <!--<label ><input type="radio" name="ocenka"> 2</label>-->
+            <!--<label ><input type="radio" name="ocenka"> 3</label>-->
+            <!--<label ><input type="radio" name="ocenka"> 4</label>-->
+            <!--<label ><input type="radio" name="ocenka"> 5</label>-->
+
+
+            <!--<button>Отправить</button>-->
+
+        <!--</form>-->
+
+
+        <form action="" id="middle-form">
+
+            <h1 class="forem__title">Форма заказа футболки</h1>
+
+            <!--
+                Мы можем разбивать нашу форму на логические блоки:
+            -->
+
+            <fieldset>
+                <legend>Контактная информация</legend>
+                <div>
+                    <label for="name">Имя <em>*</em></label>
+                    <input type="text" id="name" required>
+                </div>
+                <div>
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email">
+                </div>
+                <div>
+                    <label for="pass">Ваш серетный ключ</label>
+                    <input type="password" id="pass">
+                </div>
+            </fieldset>
+
+
+            <fieldset>
+                <legend>Информация заказа</legend>
+                <div>
+                    <label for="size">Размер <em>*</em></label>
+                    <select name="size" id="size">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="color">Цвет</label>
+                    <input type="color" id="color">
+                </div>
+
+                <div>
+                    <label for="count">Количество</label>
+                    <input type="number" id="count" min="1">
+                </div>
+
+                <div>
+                    <label for="custom">Свой принт</label>
+                    <input type="file" id="custom" >
+                </div>
+
+                <div>
+                    <label for="time">Дата доставки</label>
+                    <input type="date" id="time">
+                </div>
+
+            </fieldset>
+
+
+            <button>Отправить</button>
+
+        </form>
+
+
+        <!-- работа на уроке https://monosnap.com/file/YBWrcVBmDMiK5PLUiIHlgJScMJSgRQ-->
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ba-custom checkbox</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 25px;
+            font-family: sans-serif;
+        }
+
+        /* Option */
+
+        .option {
+            display: block;
+            margin-bottom: 0.5em;
+        }
+
+        /* Check */
+
+        .check__input {
+            position: absolute;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        .check__box {
+            position: absolute;
+            margin-top: 0.2em;
+            margin-left: -1em;
+            width: 0.6em;
+            height: 0.6em;
+            overflow: hidden;
+            border-radius: 0.05em;
+            background-color: white;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            box-shadow: 0 0 0 0.1em #4A90E2;
+        }
+
+        /* Checked */
+
+        .check__input:checked + .check__box {
+            background-color: #4A90E2;
+            background-image: url(https://cdn.glitch.com/d6162378-5823-4160-a555-3d9789bd2b92%2Fcheck.svg?1550563475518);
+        }
+
+        /* Focused */
+
+        .check__input:active + .check__box {
+            box-shadow: 0 0 0 0.1em #4A90E2,
+            0 0 0 0.2em tomato;
+        }
+
+        .check__input:focus + .check__box,
+        .check__input:hover + .check__box {
+            box-shadow: 0 0 0 0.1em #4A90E2,
+            0 0 0 0.2em #7ED321;
+        }
+
+        /* Disabled */
+
+        .check__input:disabled + .check__box {
+            box-shadow: 0 0 0 0.1em #9B9B9B;
+        }
+
+        .check__input:checked:disabled + .check__box {
+            background-color: #9B9B9B;
+        }
+    </style>
+</head>
+<body class="container">
+
+<h1>Custom checkbox and radio</h1>
+
+
+<div class="code-wrapper">
+
+    <div class="html">
+        <h2>Html for checkbox</h2>
+        <pre>
+
+&lt;label class="check option"&gt
+    &lt;input class="check__input" type="checkbox"&gt
+    &lt;span class="check__box"&gt&lt/span&gt
+    Первый
+&lt;/label&gt
+        </pre>
+    </div>
+
+    <div class="css">
+        <h2>Css</h2>
+        <pre>
+    .check__input {
+        position: absolute;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+
+    .check__box {
+        position: absolute;
+        margin-top: 0.2em;
+        margin-left: -1em;
+        width: 0.6em;
+        height: 0.6em;
+        overflow: hidden;
+        border-radius: 0.05em;
+        background-color: white;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        box-shadow: 0 0 0 0.1em #4A90E2;
+    }
+
+    /* Checked */
+
+    .check__input:checked + .check__box {
+        background-color: #4A90E2;
+        background-image: url(https://cdn.glitch.com/d6162378-5823-4160-a555-3d9789bd2b92%2Fcheck.svg?1550563475518);
+    }
+
+    /* Focused */
+
+    .check__input:active + .check__box {
+        box-shadow: 0 0 0 0.1em #4A90E2,
+        0 0 0 0.2em tomato;
+    }
+
+    .check__input:focus + .check__box,
+    .check__input:hover + .check__box {
+        box-shadow: 0 0 0 0.1em #4A90E2,
+        0 0 0 0.2em #7ED321;
+    }
+
+    /* Disabled */
+
+    .check__input:disabled + .check__box {
+        box-shadow: 0 0 0 0.1em #9B9B9B;
+    }
+
+    .check__input:checked:disabled + .check__box {
+        background-color: #9B9B9B;
+    }
+        </pre>
+    </div>
+
+</div>
+
+<div class="container">
+
+    <label class="check option">
+    <input class="check__input" type="checkbox">
+    <span class="check__box"></span>
+    Первый
+    </label>
+    <label class="check option">
+        <input class="check__input" type="checkbox" checked>
+        <span class="check__box"></span>
+        Второй
+    </label>
+    <label class="check option">
+        <input class="check__input" type="checkbox" disabled>
+        <span class="check__box"></span>
+        Третий
+    </label>
+    <label class="check option">
+        <input class="check__input" type="checkbox" checked disabled>
+        <span class="check__box"></span>
+        Четвёртый
+    </label>
+</div>
+
+<style>
+    .radio{
+        position: relative;
+        padding-left: 1.5em;
+        margin-bottom: .5em;
+    }
+    .radio__input{
+
+        /* or you can use visually-hidden class */
+
+        -webkit-appearance: none;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        left: -999999999px;
+    }
+
+    .radio__label{
+        text-transform: uppercase;
+    }
+
+    .radio__label:after{
+        content: '';
+        position: absolute;
+        left: 0;
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        border-radius: 50%;
+        box-shadow: 0 0 0 0.1em #4A90E2;
+    }
+
+    /*radio checked*/
+    .radio__input:checked ~ .radio__label:after{
+        background: tomato;
+    }
+
+    /*radio disabled and disabled checked*/
+    .radio__input:disabled ~ .radio__label:after{
+        opacity: .5;
+        box-shadow: 0 0 0 0.1em #3d3a4c;
+    }
+
+    .radio__input:disabled:checked ~ .radio__label:after{
+        background: tomato;
+        opacity: .5;
+        box-shadow: 0 0 0 0.1em #3d3a4c;
+    }
+
+    /*radio focus | hover and focus | hover checked*/
+    .radio__input:hover ~ .radio__label:after,
+    .radio__input:focus ~ .radio__label:after
+    {
+        box-shadow: 0 0 0 0.3em #4A90E2;
+    }
+
+
+</style>
+
+<hr>
+
+<div class="code-wrapper">
+
+    <div class="html">
+        <h2>Html for radio</h2>
+        <pre>
+    &lt;div class="radio"&gt
+        &lt;input type="radio"  id="radio-s" class="radio__input" name="size" &gt
+        &lt;label class="radio__label" for="radio-s"&gt
+            s
+        &lt;/label&gt
+    &lt;/&gt
+        </pre>
+    </div>
+
+    <div class="css">
+        <h2>Css</h2>
+        <pre>
+    .radio{
+        position: relative;
+        padding-left: 1.5em;
+        margin-bottom: .5em;
+    }
+    .radio__input{
+
+        /* or you can use visually-hidden class */
+
+        -webkit-appearance: none;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        left: -999999999px;
+    }
+
+    .radio__label{
+        text-transform: uppercase;
+    }
+
+    .radio__label:after{
+        content: '';
+        position: absolute;
+        left: 0;
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        border-radius: 50%;
+        box-shadow: 0 0 0 0.1em #4A90E2;
+    }
+
+    /*radio checked*/
+    .radio__input:checked ~ .radio__label:after{
+        background: tomato;
+    }
+
+    /*radio disabled and disabled checked*/
+    .radio__input:disabled ~ .radio__label:after{
+        opacity: .5;
+        box-shadow: 0 0 0 0.1em #3d3a4c;
+    }
+
+    .radio__input:disabled:checked ~ .radio__label:after{
+        background: tomato;
+        opacity: .5;
+        box-shadow: 0 0 0 0.1em #3d3a4c;
+    }
+
+    /*radio focus | hover and focus | hover checked*/
+    .radio__input:hover ~ .radio__label:after,
+    .radio__input:focus ~ .radio__label:after
+    {
+        box-shadow: 0 0 0 0.3em #4A90E2;
+    }
+        </pre>
+    </div>
+
+</div>
+
+<!--<fieldset>-->
+    <!--<legend> Choise size</legend>-->
+
+    <div class="radio">
+        <input type="radio"  id="radio-s" class="radio__input" name="size" >
+        <label class="radio__label" for="radio-s">
+            s
+        </label>
+    </div>
+    <div class="radio">
+        <input type="radio" id="radio-m"  class="radio__input" name="size">
+        <label class="radio__label" for="radio-m">
+            m
+        </label>
+    </div>
+    <div class="radio">
+        <input type="radio"  class="radio__input" id="radio-l" name="size" >
+        <label class="radio__label" for="radio-l" >
+            l
+        </label>
+    </div>
+    <div class="radio" >
+        <input type="radio" id="radio-xl" class="radio__input" name="size" >
+        <label class="radio__label" for="radio-xl">
+            xl
+        </label>
+    </div>
+
+<!--</fieldset>-->
+
+
+</body>
+</html>
